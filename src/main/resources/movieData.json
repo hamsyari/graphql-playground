@@ -1,0 +1,130 @@
+[
+  {
+    "movieInfo": {
+      "id": 1,
+      "title": "Spider-Man: No Way Home",
+      "releaseDate": "2021-12-16",
+      "durationMins": 148,
+      "genre": "Action",
+      "synopsis": "With Spider-Man identity now revealed, our friendly neighborhood web-slinger is unmasked and no longer able to separate his normal life as Peter Parker from the high stakes of being a superhero.",
+      "language": "English"
+    },
+    "cast": [
+      {
+        "id": 1,
+        "name": "Tom Holland"
+      },
+      {
+        "id": 2,
+        "name": "Zendaya"
+      },
+      {
+        "id": 3,
+        "name": "Williem Dafoe"
+      },
+      {
+        "id": 4,
+        "name": "Alfred Molina"
+      },
+      {
+        "id": 5,
+        "name": "Jamie Foxx"
+      },
+      {
+        "id": 6,
+        "name": "Maria Tomei"
+      }
+    ]
+  },
+  {
+    "movieInfo": {
+      "id": 2,
+      "title": "Get Out",
+      "releaseDate": "2017-03-16",
+      "durationMins": 104,
+      "genre": "Thriller",
+      "synopsis": "Chris, an African-American man, decides to visit his Caucasian girlfriend parents during a weekend getaway. Although they seem normal at first, he is not prepared to experience the horrors ahead.",
+      "language": "English"
+    },
+    "cast": [
+      {
+        "id": 7,
+        "name": "Daniel Kaluuya"
+      },
+      {
+        "id": 8,
+        "name": "Allison Williams"
+      },
+      {
+        "id": 9,
+        "name": "Catherine Keener"
+      },
+      {
+        "id": 10,
+        "name": "Lil Rel Howery"
+      }
+    ]
+  },
+  {
+    "movieInfo": {
+      "id": 3,
+      "title": "Shang-Chi and The Legend of The Ten Rings",
+      "releaseDate": "2021-09-02",
+      "durationMins": 132,
+      "genre": "Action",
+      "synopsis": "Martial-arts master Shang-Chi confronts the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+      "language": "English"
+    },
+    "cast": [
+      {
+        "id": 11,
+        "name": "Simu Liu"
+      },
+      {
+        "id": 12,
+        "name": "Awkwafina"
+      },
+      {
+        "id": 13,
+        "name": "Meng er Zhang"
+      },
+      {
+        "id": 14,
+        "name": "Tony Leung"
+      },
+      {
+        "id": 15,
+        "name": "Michelle Yeoh"
+      }
+    ]
+  },
+  {
+    "movieInfo": {
+      "id": 4,
+      "title": "Train to Busan",
+      "releaseDate": "2016-09-04",
+      "durationMins": 118,
+      "genre": "Action",
+      "synopsis": "Seok-woo and his daughter are on a train to Busan on her birthday to see his wife. However, the journey turns into a nightmare when they are trapped amidst a zombie outbreak in South Korea.",
+      "language": "Korean"
+    },
+    "cast": [
+      {
+        "id": 16,
+        "name": "Gong Yoo"
+      },
+      {
+        "id": 17,
+        "name": "Kim Su-an"
+      },
+      {
+        "id": 18,
+        "name": "Ma Dong-seok"
+      },
+      {
+        "id": 19,
+        "name": "Jung Yu-mi"
+      }
+    ]
+  }
+]
