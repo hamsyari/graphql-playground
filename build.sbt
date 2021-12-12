@@ -26,4 +26,7 @@ libraryDependencies ++= Seq(
   "org.sangria-graphql" %% "sangria-circe"           % sangriaCirceVersion,
   "org.sangria-graphql" %% "sangria-akka-http-core"  % sangriaAkkaHttpVersion,
   "org.sangria-graphql" %% "sangria-akka-http-circe" % sangriaAkkaHttpVersion,
+
+  "org.scalatest"     %% "scalatest"   % scalaTestVersion % Test,
+  "org.scalatestplus" %% "mockito-3-4" % scalaTestMockitoVersion
 )

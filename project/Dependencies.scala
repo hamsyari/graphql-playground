@@ -10,5 +10,7 @@ object Dependencies {
   val sangriaCirceVersion       = "1.3.2"
   val sangriaGraphqlVersion     = "2.1.5"
   val scalaLoggingVersion       = "3.9.4"
+  val scalaTestVersion          = "3.2.9"
+  val scalaTestMockitoVersion   = "3.2.10.0"
   val typesafeConfigVersion     = "1.4.1"
 }
