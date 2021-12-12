@@ -31,7 +31,7 @@ object Playground extends App with CirceHttpSupport with LazyLogging {
         prepareGraphQLRequest {
           case Success(req) =>
             val graphQLResponse = Executor.execute(
-              SchemaDefinition.moviesSchema,
+              SchemaDefinition.MoviesSchema,
               req.query,
               userContext = MovieService(useDbConnection),
               variables = req.variables

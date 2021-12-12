@@ -51,5 +51,5 @@ object SchemaDefinition {
       resolve = _.ctx.fetchAllData())
   ))
 
-  val moviesSchema: Schema[MovieServiceImpl, Unit] = Schema(QueryType)
+  val MoviesSchema: Schema[MovieServiceImpl, Unit] = Schema(QueryType)
 }
