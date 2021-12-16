@@ -18,12 +18,12 @@ sbt run
 # returns all movie data
 curl -X POST localhost:8080/graphql \
 -H "Content-Type:application/json" \
--d '{"query": "{movies {title, releaseDate, genre, cast {name}}}"}'
+-d '{"query": "{movies {movieInfo {title, releaseDate, genre}, cast {name}}}"}'
 
 # returns movie data based on movie id
 curl -X POST localhost:8080/graphql \
 -H "Content-Type:application/json" \
--d '{"query": "query($id: Int!){movie(id: $id) {title, releaseDate, genre, cast {name}}}", "variables": {"id": 1}}'
+-d '{"query": "query($id: Int!){movie(id: $id) {movieInfo {title, releaseDate, genre}, cast {name}}}", "variables": {"id": 1}}'
 ```
 
 ## Content
