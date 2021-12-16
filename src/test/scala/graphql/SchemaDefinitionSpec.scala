@@ -23,9 +23,11 @@ class SchemaDefinitionSpec extends AnyWordSpec with Matchers {
         graphql"""
           query {
             movies {
-              title
-              genre
-              language
+              movieInfo {
+                title
+                genre
+                durationInMinutes
+              }
             }
           }
                """
@@ -35,10 +37,10 @@ class SchemaDefinitionSpec extends AnyWordSpec with Matchers {
           |{
           | "data": {
           |   "movies": [
-          |     { "title": "Spider-Man: No Way Home", "genre": "Action", "language": "English" },
-          |     { "title": "Get Out", "genre": "Thriller", "language": "English" },
-          |     { "title": "Shang-Chi and The Legend of The Ten Rings", "genre": "Action", "language": "English" },
-          |     { "title": "Train to Busan", "genre": "Action", "language": "Korean" }
+          |     { "movieInfo": { "title": "Spider-Man: No Way Home", "genre": "Action", "durationInMinutes": 148 } },
+          |     { "movieInfo": { "title": "Get Out", "genre": "Horror", "durationInMinutes": 104 } },
+          |     { "movieInfo": { "title": "Shang-Chi and The Legend of The Ten Rings", "genre": "Action", "durationInMinutes": 132 } },
+          |     { "movieInfo": { "title": "Train to Busan", "genre": "Action", "durationInMinutes": 118 } }
           |   ]
           | }
           |}
@@ -51,7 +53,9 @@ class SchemaDefinitionSpec extends AnyWordSpec with Matchers {
         graphql"""
           query($$id: Int!) {
             movie(id: $$id) {
-              title
+              movieInfo {
+                title
+              }
               cast {
                 name
               }
@@ -64,7 +68,9 @@ class SchemaDefinitionSpec extends AnyWordSpec with Matchers {
           |{
           | "data": {
           |   "movie": {
-          |     "title": "Shang-Chi and The Legend of The Ten Rings",
+          |     "movieInfo": {
+          |       "title": "Shang-Chi and The Legend of The Ten Rings"
+          |     },
           |     "cast": [
           |       { "name": "Simu Liu" },
           |       { "name": "Awkwafina" },
