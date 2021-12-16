@@ -1,42 +1,39 @@
 package graphql
 
-import models.{Actor, Genre, Language, Movie}
+import models._
+import sangria.macros.derive._
 import sangria.schema._
 import service.MovieServiceImpl
 
 object SchemaDefinition {
-  val GenreEnum: EnumType[Genre] = EnumType(
-    "Genre",
-    Some("Genre of Movie"),
-    Genre.values.map(genre => EnumValue(genre.toString, value = genre)).toList
+  implicit val GenreEnum: EnumType[Genre] = deriveEnumType[Genre](
+    EnumTypeName("Genre"),
+    EnumTypeDescription("Genre of Movie"),
+    RenameValue("Thriller", "Horror")
   )
 
-  val LanguageEnum: EnumType[Language] = EnumType(
-    "Language",
-    Some("Language of Movie"),
-    Language.values.map(language => EnumValue(language.toString, value = language)).toList
+  implicit val LanguageEnum: EnumType[Language] = deriveEnumType[Language](
+    EnumTypeName("Language"),
+    EnumTypeDescription("Language of Movie")
   )
 
-  val ActorType: ObjectType[Unit, Actor] = ObjectType(
-    "Actor",
-    "Actor Information",
-    fields[Unit, Actor](
-      Field("name", StringType, resolve = _.value.name)
+  implicit val ActorType: ObjectType[Unit, Actor] = deriveObjectType[Unit, Actor](
+    ObjectTypeName("Actor"),
+    ObjectTypeDescription("Actor Information"),
+    AddFields(
+      Field("randomNum", FloatType, resolve = _ => Math.random())
     )
   )
 
-  val MovieType: ObjectType[Unit, Movie] = ObjectType(
-    "Movie",
-    "Movie Information",
-    fields[Unit, Movie](
-      Field("title", StringType, resolve = _.value.movieInfo.title),
-      Field("synopsis", StringType, resolve = _.value.movieInfo.synopsis),
-      Field("genre", GenreEnum, resolve = _.value.movieInfo.genre),
-      Field("durationMins", IntType, resolve = _.value.movieInfo.durationMins),
-      Field("releaseDate", StringType, resolve = _.value.movieInfo.releaseDate),
-      Field("language", LanguageEnum, resolve = _.value.movieInfo.language),
-      Field("cast", ListType(ActorType), resolve = _.value.cast)
-    )
+  implicit val MovieInfoType: ObjectType[Unit, MovieInfo] = deriveObjectType[Unit, MovieInfo](
+    ObjectTypeName("MovieInfo"),
+    ObjectTypeDescription("Movie Information"),
+    RenameField("durationMins", "durationInMinutes")
+  )
+
+  val MovieType: ObjectType[Unit, Movie] = deriveObjectType[Unit, Movie](
+    ObjectTypeName("Movie"),
+    ObjectTypeDescription("Movie & Cast Information")
   )
 
   val Id: Argument[Int] = Argument("id", IntType)
