@@ -1,6 +1,7 @@
 # GraphQL Playground
 
 Playground to test and play with GraphQL schema and queries.
+The project utilises Scala and [Sangria - GraphQL Implementation](https://sangria-graphql.github.io/)
 
 ## Run
 
